@@ -22,7 +22,7 @@ extension ViewController: ApiDelegate {
         }))
         self.present(alert, animated: true, completion: nil)
     }
-    func resultReceived(response: Response) {
+    func resultReceived(response: MyResponse) {
         print(" Meta \(response.response!.meta!)")
         let offset = response.response?.meta?.offset ?? 0 // bad solution
         if let docs = response.response?.docs, objectsList.count == offset {

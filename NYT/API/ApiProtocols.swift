@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ApiDelegate {
-    func resultReceived(response: Response)
+    func resultReceived(response: MyResponse)
     func error(e: MyError)
 }
 

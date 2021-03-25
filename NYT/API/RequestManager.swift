@@ -34,7 +34,7 @@ class RequestManager {
         }
     }
     
-    private func sendRequest(_ urlRequest: URLRequest,  with completion: @escaping (Result<Response, Error>) -> Void) {
+    private func sendRequest(_ urlRequest: URLRequest,  with completion: @escaping (Result<MyResponse, Error>) -> Void) {
         let sessionConfig = URLSessionConfiguration.default
         sessionConfig.timeoutIntervalForRequest = ApiConstants.timeOut
         
@@ -49,7 +49,7 @@ class RequestManager {
             
             DispatchQueue.main.async {
                 do {
-                    let result = try JSONDecoder().decode(Response.self, from: data)
+                    let result = try JSONDecoder().decode(MyResponse.self, from: data)
                     completion(.success(result))
                 } catch {
                     completion(.failure(MyError(errorMessage:"JSON decode failure")))
