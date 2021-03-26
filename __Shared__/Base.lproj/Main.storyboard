@@ -11,7 +11,7 @@
         <!--Root View Controller-->
         <scene sceneID="4t4-ah-fgv">
             <objects>
-                <tableViewController id="osS-Fl-zff" customClass="ArticlesController" customModule="nyt_mvvm" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="osS-Fl-zff" customClass="ArticlesController" customModule="NYT" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="F72-2e-N5u">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,7 +87,7 @@
         <!--Detail Controller-->
         <scene sceneID="3pl-FO-ScO">
             <objects>
-                <viewController id="mxm-1b-mIP" customClass="DetailController" customModule="nyt_mvvm" sceneMemberID="viewController">
+                <viewController id="mxm-1b-mIP" customClass="DetailController" customModule="NYT" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BOI-aS-kAF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -100,7 +100,7 @@
                                 </constraints>
                                 <state key="normal" image="square.and.arrow.up" catalog="system"/>
                                 <connections>
-                                    <action selector="share:" destination="mxm-1b-mIP" eventType="touchUpInside" id="V2G-NH-Y74"/>
+                                    <action selector="share:" destination="mxm-1b-mIP" eventType="touchUpInside" id="AGv-S5-IFw"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fgp-ho-vHW">
@@ -142,9 +142,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="header" destination="hNR-ik-Tad" id="zZ3-Xx-IBx"/>
-                        <outlet property="image" destination="fgp-ho-vHW" id="w5D-gE-lnf"/>
-                        <outlet property="text" destination="BTP-5l-CsJ" id="uDF-fc-NMH"/>
+                        <outlet property="header" destination="hNR-ik-Tad" id="Pkx-ry-PTo"/>
+                        <outlet property="image" destination="fgp-ho-vHW" id="VH7-Mz-LVP"/>
+                        <outlet property="text" destination="BTP-5l-CsJ" id="Fef-qa-Mf6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IdH-Lr-kPK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

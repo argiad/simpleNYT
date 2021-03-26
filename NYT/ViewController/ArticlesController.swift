@@ -7,15 +7,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ArticlesController: UITableViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var tableView: UITableView!
+//    @IBOutlet weak var tableView: UITableView!
     
     var objectsList = [Item]()
     var dataSource: UITableViewDiffableDataSource<Int, Item>! = nil
     
-    private var refreshControl = UIRefreshControl()
+//    private var refreshControl = UIRefreshControl()
     var selectedIndex: IndexPath? = nil
     
     @IBAction func searchAction(_ sender: Any) {
@@ -34,13 +34,14 @@ class ViewController: UIViewController {
         //        searchBar.delegate = self // Live search leads to the 429 response error
         
         // MARK: TableView init
-        tableView.dataSource = self
+//        tableView.dataSource = self
         tableView.delegate = self
         
         // MARK: Refresh Control
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
-        tableView.addSubview(refreshControl)
+        refreshControl = UIRefreshControl()
+        refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl?.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        tableView.addSubview(refreshControl!)
         
     }
     
@@ -50,7 +51,7 @@ class ViewController: UIViewController {
         objectsList.removeAll()
         tableView.reloadData()
         searchBar.endEditing(true)
-        refreshControl.endRefreshing()
+        refreshControl?.endRefreshing()
         tableView.setNeedsFocusUpdate()
     }
     

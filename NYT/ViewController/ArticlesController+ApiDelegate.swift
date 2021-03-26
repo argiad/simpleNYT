@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension ViewController: ApiDelegate {
+extension ArticlesController: ApiDelegate {
     
     func error(e: MyError) {
         let alert = UIAlertController(title: "Something went wrong", message:e.errorMessage , preferredStyle: .alert)
