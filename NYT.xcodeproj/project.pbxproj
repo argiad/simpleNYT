@@ -31,6 +31,10 @@
 		3E159A41260E36EF003ED747 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E1DA151260D3CA900EAF2A2 /* Main.storyboard */; };
 		3E159A42260E37A0003ED747 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E1DA151260D3CA900EAF2A2 /* Main.storyboard */; };
 		3E159A43260E398A003ED747 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E627D7D260C165F002F7739 /* DetailController.swift */; };
+		3E159A45260E4CDF003ED747 /* DependencyObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E159A44260E4CDF003ED747 /* DependencyObject.swift */; };
+		3E159A47260E5ED0003ED747 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E159A46260E5ED0003ED747 /* ViewModel.swift */; };
+		3E159A49260E5EE9003ED747 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E159A48260E5EE9003ED747 /* Network.swift */; };
+		3E159A4F26112CED003ED747 /* Dip in Frameworks */ = {isa = PBXBuildFile; productRef = 3E159A4E26112CED003ED747 /* Dip */; };
 		3E1DA14C260D3CA900EAF2A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1DA14B260D3CA900EAF2A2 /* AppDelegate.swift */; };
 		3E1DA14E260D3CA900EAF2A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1DA14D260D3CA900EAF2A2 /* SceneDelegate.swift */; };
 		3E1DA150260D3CA900EAF2A2 /* ArticlesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1DA14F260D3CA900EAF2A2 /* ArticlesController.swift */; };
@@ -139,6 +143,9 @@
 		3E159A1E260E3216003ED747 /* nyt-mvvm-dipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "nyt-mvvm-dipUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E159A22260E3216003ED747 /* nyt_mvvm_dipUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nyt_mvvm_dipUITests.swift; sourceTree = "<group>"; };
 		3E159A24260E3216003ED747 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E159A44260E4CDF003ED747 /* DependencyObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyObject.swift; sourceTree = "<group>"; };
+		3E159A46260E5ED0003ED747 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		3E159A48260E5EE9003ED747 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		3E1DA149260D3CA900EAF2A2 /* nyt-mvvm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "nyt-mvvm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E1DA14B260D3CA900EAF2A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E1DA14D260D3CA900EAF2A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -193,6 +200,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E159A4F26112CED003ED747 /* Dip in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,8 +269,11 @@
 			children = (
 				3E159A00260E3216003ED747 /* AppDelegate.swift */,
 				3E159A02260E3216003ED747 /* SceneDelegate.swift */,
+				3E159A44260E4CDF003ED747 /* DependencyObject.swift */,
 				3E159A04260E3216003ED747 /* ArticlesController.swift */,
+				3E159A48260E5EE9003ED747 /* Network.swift */,
 				3E159A0B260E3216003ED747 /* LaunchScreen.storyboard */,
+				3E159A46260E5ED0003ED747 /* ViewModel.swift */,
 				3E159A0E260E3216003ED747 /* Info.plist */,
 			);
 			path = "nyt-mvvm-dip";
@@ -284,6 +295,13 @@
 				3E159A24260E3216003ED747 /* Info.plist */,
 			);
 			path = "nyt-mvvm-dipUITests";
+			sourceTree = "<group>";
+		};
+		3E159A4D26112CED003ED747 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		3E1DA14A260D3CA900EAF2A2 /* nyt-mvvm */ = {
@@ -391,6 +409,7 @@
 				3E159A16260E3216003ED747 /* nyt-mvvm-dipTests */,
 				3E159A21260E3216003ED747 /* nyt-mvvm-dipUITests */,
 				3EDC52D8260A487B002B86C0 /* Products */,
+				3E159A4D26112CED003ED747 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -457,6 +476,9 @@
 			dependencies = (
 			);
 			name = "nyt-mvvm-dip";
+			packageProductDependencies = (
+				3E159A4E26112CED003ED747 /* Dip */,
+			);
 			productName = "nyt-mvvm-dip";
 			productReference = 3E1599FE260E3216003ED747 /* nyt-mvvm-dip.app */;
 			productType = "com.apple.product-type.application";
@@ -762,13 +784,16 @@
 				3E159A3A260E3242003ED747 /* ImageCache.swift in Sources */,
 				3E159A37260E323D003ED747 /* MyError.swift in Sources */,
 				3E159A36260E323D003ED747 /* Article.swift in Sources */,
+				3E159A45260E4CDF003ED747 /* DependencyObject.swift in Sources */,
 				3E159A38260E323D003ED747 /* Byline.swift in Sources */,
 				3E159A2F260E322F003ED747 /* ApiConstants.swift in Sources */,
 				3E159A39260E323D003ED747 /* Person.swift in Sources */,
 				3E159A34260E323D003ED747 /* Item.swift in Sources */,
 				3E159A05260E3216003ED747 /* ArticlesController.swift in Sources */,
 				3E159A40260E35C5003ED747 /* DetailController.swift in Sources */,
+				3E159A47260E5ED0003ED747 /* ViewModel.swift in Sources */,
 				3E159A01260E3216003ED747 /* AppDelegate.swift in Sources */,
+				3E159A49260E5EE9003ED747 /* Network.swift in Sources */,
 				3E159A35260E323D003ED747 /* Response.swift in Sources */,
 				3E159A30260E323D003ED747 /* Keywords.swift in Sources */,
 				3E159A33260E323D003ED747 /* Legacy.swift in Sources */,
@@ -1549,6 +1574,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		3E159A3C260E334F003ED747 /* Dip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3E159A3B260E334F003ED747 /* XCRemoteSwiftPackageReference "Dip" */;
+			productName = Dip;
+		};
+		3E159A4E26112CED003ED747 /* Dip */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3E159A3B260E334F003ED747 /* XCRemoteSwiftPackageReference "Dip" */;
 			productName = Dip;
